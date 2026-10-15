@@ -1,0 +1,134 @@
+# BlameRun messages (MiniMessage format: https://docs.advntr.dev/minimessage/format)
+# Tags such as <player> or <time> are placeholders filled in by the plugin. Keep them as they are.
+# To add a language: copy this file as xx.yml, translate it and set `language: xx` in config.yml.
+
+prefix: "<dark_red><bold>☠</bold></dark_red> <gray>»</gray> "
+
+general:
+  only-players: "<red>Only an in-game player can use this.</red>"
+  unknown-player: "<red>Unknown player.</red>"
+  no-history: "<gray>That player has no history yet.</gray>"
+  reloaded: "<green>Config and language reloaded.</green>"
+  version: "<gray>BlameRun</gray> <white><version></white> <dark_gray>·</dark_gray> <gray>language:</gray> <white><language></white>"
+
+splits:
+  IRON: "Iron"
+  NETHER: "Nether"
+  FORTRESS: "Fortress"
+  BLAZE_ROD: "Blaze rod"
+  PEARL: "Ender pearl"
+  STRONGHOLD: "Stronghold"
+  END: "The End"
+
+states:
+  WAITING: "waiting"
+  COUNTDOWN: "countdown"
+  RUNNING: "running"
+  ENDED: "over ☠"
+  WON: "won!"
+
+run:
+  attempt-title: "<gold><bold>ATTEMPT #<attempt></bold></gold>"
+  subtitle-auto: "<gray>Move to start the timer</gray>"
+  subtitle-manual: "<gray>Waiting for an admin to use <white>/run start</white></gray>"
+  new-attempt: "<gold>New world, new attempt: <white>#<attempt></white>. Total deaths so far: <red><total></red>.</gold>"
+  timer-started: "<green>⏱ Timer started!</green> <gray>(<reason>)</gray>"
+  reason-first-step: "<player> took the first step"
+  reason-countdown: "countdown"
+  countdown-subtitle: "<gray>Attempt #<attempt></gray>"
+  countdown-go: "<green><bold>GO!</bold></green>"
+  cannot-start: "<red>Only a waiting attempt can be started.</red> <gray>Use /run new or /run reset first.</gray>"
+  split: "<yellow>Split</yellow> <white><bold><split></bold></white> <gray>at</gray> <white><time></white> <comparison> <dark_gray>·</dark_gray> <gray>by</gray> <player>"
+  split-first-time: "<aqua>first time!</aqua>"
+  split-format: "<yellow><split></yellow> <white><time></white>"
+  summary:
+    separator: "<dark_gray>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</dark_gray>"
+    ended: "<red><bold>ATTEMPT #<attempt> OVER</bold></red> <gray>thanks to</gray> <white><player></white>"
+    duration: "<gray>It lasted</gray> <white><time></white>"
+    not-started: "<gray>…the timer hadn't even started.</gray>"
+    splits: "<gray>You reached:</gray> <splits>"
+    no-splits: "<gray>Not a single split. Legendary.</gray>"
+    shame-record: "<light_purple>NEW HALL OF SHAME RECORD!</light_purple> <gray>Shortest run in history.</gray>"
+    record-to-beat: "<gray>Record to beat:</gray> <gold><time></gold>"
+  win:
+    title: "<gold><bold>RUN COMPLETE!</bold></gold>"
+    subtitle: "<white><time></white>"
+    subtitle-record: "<white><time></white> <light_purple>NEW RECORD!</light_purple>"
+    chat: "<gold>Attempt #<attempt> won in <white><time></white> after <red><total></red> total deaths. Team: <white><team></white></gold>"
+  stats:
+    header: "<gold><bold>Attempt #<attempt></bold></gold> <gray>·</gray> <white><state></white> <gray>·</gray> <white>⏱ <time></white>"
+    splits: "<gray>Splits:</gray> <splits>"
+    none: "<dark_gray>none</dark_gray>"
+    record: "<gray>Record:</gray> <gold><time></gold> <gray><team></gray> <gray>· Wins:</gray> <green><wins></green>"
+    best-splits: "<gray>Best splits:</gray> <splits>"
+    shame: "<light_purple>Hall of shame:</light_purple> <white><time></white> <gray>by</gray> <white><player></white>"
+    deaths: "<gray>Total deaths:</gray> <red><total></red> <gray>· see</gray> <white>/deaths top</white>"
+
+reset:
+  warning: "<yellow>The world resets in <white><seconds></white> s…</yellow>"
+  generating: "<gray>Generating the world for attempt #<attempt>…</gray>"
+  cancelled: "<yellow>Automatic reset cancelled.</yellow> <gray>Use /run reset whenever you want.</gray>"
+  nothing-to-cancel: "<gray>There is no pending reset.</gray>"
+  disabled: "<red>The built-in world reset is disabled (world-reset.enabled).</red>"
+  seed: "<gray>Seed for attempt #<attempt>:</gray> <white><seed></white>"
+  seed-hidden: "<red>The seed can only be seen once the attempt is over.</red>"
+
+death:
+  singular: "death"
+  plural: "deaths"
+  counter: "<red><player></red> <gray>has</gray> <red><bold><count></bold></red> <gray><word>.</gray>"
+  cause: " <dark_gray>(</dark_gray><cause><dark_gray>)</dark_gray>"
+  title: "<dark_red><bold><player></bold></dark_red>"
+  alive-left: "<green><alive></green> <gray>still alive. No pressure.</gray>"
+  phrases:
+    - "<player> just threw the run in the trash"
+    - "Thanks, <player>. Really. Thanks."
+    - "<player> chose violence… against their own team"
+    - "Everyone: 'we're doing great'. <player>: 'hold my drink'"
+    - "<player> is the reset's employee of the month"
+    - "Press F for <player>. Press F for the run."
+    - "<player> mistook hardcore for creative"
+    - "The run is dead. Long live the run. (Blame <player>)"
+
+hud:
+  bossbar-prefix: "<gold>Attempt #<attempt></gold> <dark_gray>·</dark_gray> "
+  bossbar-waiting-auto: "<aqua>Move to start the timer</aqua>"
+  bossbar-waiting-manual: "<aqua>Waiting for /run start</aqua>"
+  bossbar-countdown: "<yellow>Get ready…!</yellow>"
+  bossbar-time: "<white>⏱ <time></white>"
+  bossbar-next: " <dark_gray>·</dark_gray> <gray>Next:</gray> <yellow><split></yellow>"
+  bossbar-dragon: " <dark_gray>·</dark_gray> <light_purple>Go kill the dragon!</light_purple>"
+  bossbar-record: " <dark_gray>·</dark_gray> <gray>Record</gray> <gold><time></gold>"
+  bossbar-ended: "<red>☠ Ended by <player> at <time></red>"
+  bossbar-won: "<gold><bold>WON in <time>!</bold></gold>"
+  bossbar-resetting: "<yellow>New world in <seconds> s…</yellow>"
+  tab-header: "<dark_red><bold>☠ BLAMERUN ☠</bold></dark_red>\n<gray>Attempt</gray> <gold>#<attempt></gold>  <gray>⏱</gray> <white><time></white>\n"
+  tab-wall: "\n<red>Hall of shame</red>\n"
+  tab-footer: "\n<gray>Record:</gray> <gold><record></gold>  <gray>Wins:</gray> <green><wins></green>  <gray>Total deaths:</gray> <red><total></red>"
+  nobody-died: "<gray>Nobody has died… yet.</gray>"
+  sidebar-title: "<dark_red><bold>☠ Deaths</bold></dark_red> <gray>· #<attempt></gray>"
+
+deaths:
+  one: " <white><player></white> <gray>has</gray> <red><bold><count></bold></red> <gray><word> · rank</gray> <yellow>#<rank></yellow> <gray>of <of> on the hall of shame.</gray>"
+  top-title: "<dark_red><bold>☠ Hall of shame ☠</bold></dark_red> <gray>(<total> total deaths)</gray>"
+  top-line: " <white><player></white> <dark_gray>—</dark_gray> <red>☠ <count></red>"
+  hud-changed: "<gray>Action bar:</gray> <white><mode></white>"
+  hud-usage: "<red>Use: faces, text or off.</red>"
+  set-done: "<gray>Deaths of</gray> <white><player></white> <gray>→</gray> <red><count></red>"
+  reset-warning: "<yellow>This sets EVERYONE's deaths to 0. Type</yellow> <white>/deaths reset confirm</white>"
+  reset-done: "<green>Death counter reset.</green>"
+
+catchup:
+  invalid-mode: "<red>Mode: admin or average.</red>"
+  not-found: "<red>Player not found.</red>"
+  self: "<red>You can't catch yourself up.</red>"
+  mode-admin: "<admin>'s gear"
+  mode-average: "server average"
+  nothing-new: "nothing new (already well equipped)"
+  done: "<green>Caught up</green> <white><player></white> <gray>(<mode>):</gray> <white><gear></white><gray>, <food> food, level <level>.</gray>"
+  revived: " <yellow>Set to survival.</yellow>"
+  welcome: "<green>Welcome to the run!</green> <gray>You got gear to catch up. You're now next to</gray> <white><admin></white><gray>. Don't die. Seriously.</gray>"
+  announce: "<aqua><player></aqua> <gray>joins attempt #<attempt> midway with similar gear.</gray>"
+  newcomer-notice: "<aqua><player></aqua> <gray>joined mid-attempt (<time>).</gray> "
+  button: "<green><bold>[Catch up]</bold></green>"
+  button-hover: "Bring them to you and give them gear like yours"

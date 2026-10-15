@@ -1,0 +1,36 @@
+name: BlameRun
+version: '${version}'
+main: dev.blamerun.BlameRun
+api-version: '26.3'
+authors: [Maverick2806]
+description: Co-op hardcore speedrun with automatic world reset, per-player death counter with skin faces, splits, records and /catchup.
+
+permissions:
+  blamerun.admin:
+    description: All admin permissions.
+    default: op
+    children:
+      blamerun.catchup: true
+      blamerun.run.control: true
+      blamerun.deaths.edit: true
+      blamerun.reload: true
+      blamerun.seed: true
+      blamerun.notify: true
+  blamerun.catchup:
+    description: /catchup - bring a player to you and give them comparable gear.
+    default: op
+  blamerun.run.control:
+    description: /run start, reset, cancel and new.
+    default: op
+  blamerun.deaths.edit:
+    description: /deaths set and /deaths reset.
+    default: op
+  blamerun.reload:
+    description: /br reload.
+    default: op
+  blamerun.seed:
+    description: See the seed while an attempt is still running.
+    default: op
+  blamerun.notify:
+    description: Get a clickable notice when someone joins mid-attempt.
+    default: op

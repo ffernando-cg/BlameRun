@@ -1,0 +1,134 @@
+# Mensajes de BlameRun en español (formato MiniMessage: https://docs.advntr.dev/minimessage/format)
+# Las etiquetas como <player> o <time> se sustituyen solas. No las traduzcas.
+# Actívalo con `language: es` en config.yml. Los comandos siguen siendo en inglés.
+
+prefix: "<dark_red><bold>☠</bold></dark_red> <gray>»</gray> "
+
+general:
+  only-players: "<red>Esto solo lo puede usar un jugador dentro del juego.</red>"
+  unknown-player: "<red>No conozco a ese jugador.</red>"
+  no-history: "<gray>Ese jugador aún no tiene historial.</gray>"
+  reloaded: "<green>Configuración e idioma recargados.</green>"
+  version: "<gray>BlameRun</gray> <white><version></white> <dark_gray>·</dark_gray> <gray>idioma:</gray> <white><language></white>"
+
+splits:
+  IRON: "Hierro"
+  NETHER: "Nether"
+  FORTRESS: "Fortaleza"
+  BLAZE_ROD: "Vara de blaze"
+  PEARL: "Perla de ender"
+  STRONGHOLD: "Stronghold"
+  END: "The End"
+
+states:
+  WAITING: "esperando"
+  COUNTDOWN: "cuenta atrás"
+  RUNNING: "en curso"
+  ENDED: "terminado ☠"
+  WON: "¡ganado!"
+
+run:
+  attempt-title: "<gold><bold>INTENTO #<attempt></bold></gold>"
+  subtitle-auto: "<gray>Muévete para arrancar el cronómetro</gray>"
+  subtitle-manual: "<gray>Esperando a que un admin use <white>/run start</white></gray>"
+  new-attempt: "<gold>Nuevo mundo, nuevo intento: <white>#<attempt></white>. Muertes totales hasta ahora: <red><total></red>.</gold>"
+  timer-started: "<green>⏱ ¡Cronómetro en marcha!</green> <gray>(<reason>)</gray>"
+  reason-first-step: "<player> dio el primer paso"
+  reason-countdown: "cuenta atrás"
+  countdown-subtitle: "<gray>Intento #<attempt></gray>"
+  countdown-go: "<green><bold>¡YA!</bold></green>"
+  cannot-start: "<red>Solo se puede iniciar un intento que está esperando.</red> <gray>Usa antes /run new o /run reset.</gray>"
+  split: "<yellow>Split</yellow> <white><bold><split></bold></white> <gray>en</gray> <white><time></white> <comparison> <dark_gray>·</dark_gray> <gray>por</gray> <player>"
+  split-first-time: "<aqua>¡primera vez!</aqua>"
+  split-format: "<yellow><split></yellow> <white><time></white>"
+  summary:
+    separator: "<dark_gray>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</dark_gray>"
+    ended: "<red><bold>INTENTO #<attempt> TERMINADO</bold></red> <gray>por</gray> <white><player></white>"
+    duration: "<gray>Duró</gray> <white><time></white>"
+    not-started: "<gray>…ni siquiera había arrancado el cronómetro.</gray>"
+    splits: "<gray>Llegasteis a:</gray> <splits>"
+    no-splits: "<gray>No se alcanzó ni un solo split. Épico.</gray>"
+    shame-record: "<light_purple>¡NUEVO RÉCORD DE LA VERGÜENZA!</light_purple> <gray>La run más corta de la historia.</gray>"
+    record-to-beat: "<gray>Récord a batir:</gray> <gold><time></gold>"
+  win:
+    title: "<gold><bold>¡RUN COMPLETADA!</bold></gold>"
+    subtitle: "<white><time></white>"
+    subtitle-record: "<white><time></white> <light_purple>¡NUEVO RÉCORD!</light_purple>"
+    chat: "<gold>Intento #<attempt> ganado en <white><time></white> tras <red><total></red> muertes en total. Equipo: <white><team></white></gold>"
+  stats:
+    header: "<gold><bold>Intento #<attempt></bold></gold> <gray>·</gray> <white><state></white> <gray>·</gray> <white>⏱ <time></white>"
+    splits: "<gray>Splits:</gray> <splits>"
+    none: "<dark_gray>ninguno</dark_gray>"
+    record: "<gray>Récord:</gray> <gold><time></gold> <gray><team></gray> <gray>· Victorias:</gray> <green><wins></green>"
+    best-splits: "<gray>Mejores splits:</gray> <splits>"
+    shame: "<light_purple>Récord de la vergüenza:</light_purple> <white><time></white> <gray>por</gray> <white><player></white>"
+    deaths: "<gray>Muertes totales:</gray> <red><total></red> <gray>· usa</gray> <white>/deaths top</white>"
+
+reset:
+  warning: "<yellow>El mundo se reinicia en <white><seconds></white> s…</yellow>"
+  generating: "<gray>Generando el mundo del intento #<attempt>…</gray>"
+  cancelled: "<yellow>Reinicio automático cancelado.</yellow> <gray>Usa /run reset cuando quieras.</gray>"
+  nothing-to-cancel: "<gray>No hay ningún reinicio pendiente.</gray>"
+  disabled: "<red>El reinicio de mundo integrado está desactivado (world-reset.enabled).</red>"
+  seed: "<gray>Semilla del intento #<attempt>:</gray> <white><seed></white>"
+  seed-hidden: "<red>La semilla solo se puede ver cuando termina el intento.</red>"
+
+death:
+  singular: "muerte"
+  plural: "muertes"
+  counter: "<red><player></red> <gray>lleva</gray> <red><bold><count></bold></red> <gray><word>.</gray>"
+  cause: " <dark_gray>(</dark_gray><cause><dark_gray>)</dark_gray>"
+  title: "<dark_red><bold><player></bold></dark_red>"
+  alive-left: "<gray>Quedan</gray> <green><alive></green> <gray>con vida. Nada de presión.</gray>"
+  phrases:
+    - "<player> acaba de tirar la run a la basura"
+    - "Gracias, <player>. De verdad. Gracias."
+    - "<player> eligió la violencia… contra su propio equipo"
+    - "Todos: 'vamos bien'. <player>: 'sostenme la cerveza'"
+    - "<player> ha sido nombrado empleado del mes del reinicio"
+    - "Pulsa F para <player>. Pulsa F para la run."
+    - "<player> confundió hardcore con creativo"
+    - "La run ha muerto. Larga vida a la run. (Culpa de <player>)"
+
+hud:
+  bossbar-prefix: "<gold>Intento #<attempt></gold> <dark_gray>·</dark_gray> "
+  bossbar-waiting-auto: "<aqua>Muévete para arrancar el cronómetro</aqua>"
+  bossbar-waiting-manual: "<aqua>Esperando /run start</aqua>"
+  bossbar-countdown: "<yellow>¡Preparados…!</yellow>"
+  bossbar-time: "<white>⏱ <time></white>"
+  bossbar-next: " <dark_gray>·</dark_gray> <gray>Siguiente:</gray> <yellow><split></yellow>"
+  bossbar-dragon: " <dark_gray>·</dark_gray> <light_purple>¡A por el dragón!</light_purple>"
+  bossbar-record: " <dark_gray>·</dark_gray> <gray>Récord</gray> <gold><time></gold>"
+  bossbar-ended: "<red>☠ Terminado por <player> en <time></red>"
+  bossbar-won: "<gold><bold>¡GANADO en <time>!</bold></gold>"
+  bossbar-resetting: "<yellow>Nuevo mundo en <seconds> s…</yellow>"
+  tab-header: "<dark_red><bold>☠ BLAMERUN ☠</bold></dark_red>\n<gray>Intento</gray> <gold>#<attempt></gold>  <gray>⏱</gray> <white><time></white>\n"
+  tab-wall: "\n<red>Muro de la vergüenza</red>\n"
+  tab-footer: "\n<gray>Récord:</gray> <gold><record></gold>  <gray>Victorias:</gray> <green><wins></green>  <gray>Muertes totales:</gray> <red><total></red>"
+  nobody-died: "<gray>Nadie ha muerto… todavía.</gray>"
+  sidebar-title: "<dark_red><bold>☠ Muertes</bold></dark_red> <gray>· #<attempt></gray>"
+
+deaths:
+  one: " <white><player></white> <gray>lleva</gray> <red><bold><count></bold></red> <gray><word> · puesto</gray> <yellow>#<rank></yellow> <gray>de <of> en el muro de la vergüenza.</gray>"
+  top-title: "<dark_red><bold>☠ Muro de la vergüenza ☠</bold></dark_red> <gray>(<total> muertes en total)</gray>"
+  top-line: " <white><player></white> <dark_gray>—</dark_gray> <red>☠ <count></red>"
+  hud-changed: "<gray>Barra de acción:</gray> <white><mode></white>"
+  hud-usage: "<red>Usa: faces (caras), text (texto) u off (nada).</red>"
+  set-done: "<gray>Muertes de</gray> <white><player></white> <gray>→</gray> <red><count></red>"
+  reset-warning: "<yellow>Esto pone a 0 las muertes de TODOS. Escribe</yellow> <white>/deaths reset confirm</white>"
+  reset-done: "<green>Contador de muertes reiniciado.</green>"
+
+catchup:
+  invalid-mode: "<red>Modo: admin o average (promedio).</red>"
+  not-found: "<red>Jugador no encontrado.</red>"
+  self: "<red>No puedes emparejarte contigo mismo.</red>"
+  mode-admin: "equipo de <admin>"
+  mode-average: "promedio del servidor"
+  nothing-new: "nada nuevo (ya iba bien equipado)"
+  done: "<green>Emparejado</green> <white><player></white> <gray>(<mode>):</gray> <white><gear></white><gray>, <food> de comida, nivel <level>.</gray>"
+  revived: " <yellow>Se le puso en supervivencia.</yellow>"
+  welcome: "<green>¡Bienvenido a la run!</green> <gray>Te han dado equipo para ponerte al día. Ahora estás junto a</gray> <white><admin></white><gray>. No mueras. En serio.</gray>"
+  announce: "<aqua><player></aqua> <gray>se une a mitad del intento #<attempt> con equipo de nivel similar.</gray>"
+  newcomer-notice: "<aqua><player></aqua> <gray>entró a mitad del intento (<time>).</gray> "
+  button: "<green><bold>[Emparejar]</bold></green>"
+  button-hover: "Traerlo contigo y darle equipo parecido al tuyo"

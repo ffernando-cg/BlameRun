@@ -1,0 +1,99 @@
+# =========================================================
+#  BlameRun - configuration
+#  Apply changes with /br reload (changing world-reset.enabled needs a server restart).
+# =========================================================
+
+# Message language: en | es. Messages are editable in plugins/BlameRun/lang/<language>.yml
+# To add a language, copy en.yml as xx.yml, translate it and set "xx" here.
+language: en
+
+# Worlds that are NOT part of the run (lobbies, build worlds...).
+# Players in these worlds are never touched by the plugin.
+ignored-worlds:
+  - lobby
+
+world-reset:
+  # true  = the plugin creates a fresh world (overworld + nether + end) for every attempt.
+  #         No other reset plugin needed.
+  # false = another plugin resets the world; this one only detects the new world and keeps score.
+  enabled: true
+  # Reset automatically when an attempt ends. If false, an admin runs /run reset.
+  automatic: true
+  # Seconds between the end of an attempt and the new world (time to read the summary).
+  delay-seconds: 10
+  # Also start a new attempt after a win (dragon killed).
+  reset-after-win: false
+  seconds-after-win: 60
+  # Worlds are named <prefix>_<attempt>, <prefix>_<attempt>_nether and <prefix>_<attempt>_the_end
+  world-prefix: blamerun
+  # Empty = random seed every attempt. A number or text = always the same seed (great for practice).
+  seed: ""
+  # true = anyone can see the seed with /run seed while the attempt is running.
+  # (Once an attempt is over, everyone can see it.)
+  public-seed: false
+  hardcore: true
+  # PEACEFUL | EASY | NORMAL | HARD
+  difficulty: HARD
+  # Delete previous attempts' worlds from disk.
+  delete-old-worlds: true
+  # What every player loses when a new attempt starts.
+  clear-players:
+    inventory: true
+    ender-chest: true
+    experience: true
+    effects: true
+    # Needed so advancement-based splits (Fortress, Stronghold) count again.
+    advancements: true
+
+run:
+  # When an attempt ends:
+  #   first-death = as soon as anyone dies (classic "one dies, everyone dies")
+  #   all-dead    = when the last player alive dies
+  ends-when: first-death
+  # The timer starts by itself with the first player movement after each reset.
+  # Set to false to always start with /run start (countdown).
+  auto-start: true
+  countdown-seconds: 5
+  # Only with world-reset.enabled: false. If the attempt ended by a death and someone goes back
+  # to survival, assume the other plugin already reset the world.
+  detect-reset-by-gamemode: true
+
+hud:
+  # Boss bar with attempt, timer and next objective.
+  bossbar: true
+  # Sidebar (text) with each player's deaths.
+  sidebar: true
+  # Tab list header/footer with the "hall of shame" using skin faces.
+  tablist: true
+  # Health hearts next to names in the tab list.
+  health-in-tab: true
+  # Per-player action bar: FACES | TEXT | OFF  (each player can change it with /deaths hud)
+  default-mode: FACES
+  # Maximum faces shown in the action bar and the tab list.
+  max-faces: 10
+
+on-death:
+  lightning: true
+  title: true
+  summary: true
+  # Optional console command when an attempt ends by a death. {player} = who died.
+  # Useful with world-reset.enabled: false to trigger another reset plugin.
+  command: ""
+  command-delay-seconds: 8
+
+catchup:
+  # admin   = match the gear tier of the admin running the command
+  # average = match the average gear tier of all online survival players
+  default-mode: admin
+  # If true, admin mode also copies enchantments.
+  copy-enchantments: false
+  min-food: 16
+  give-experience: true
+  # Extra items for every caught-up player (MATERIAL:amount).
+  extras:
+    - "TORCH:16"
+    - "COBBLESTONE:32"
+    - "CRAFTING_TABLE:1"
+  # Notify admins (with a clickable button) when someone new joins mid-attempt.
+  notify-admins: true
+  notify-after-minutes: 3
